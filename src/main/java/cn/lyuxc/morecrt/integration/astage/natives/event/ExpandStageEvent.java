@@ -28,7 +28,7 @@ public class ExpandStageEvent {
         @Nonnull
         @ZenCodeType.Method
         @ZenCodeType.Getter("stage")
-        public static String getStageName (StageAddedPlayerEvent event) {
+        public static String getStageName(StageAddedPlayerEvent event) {
             return event.stage;
         }
     }
@@ -46,7 +46,7 @@ public class ExpandStageEvent {
         @Nonnull
         @ZenCodeType.Method
         @ZenCodeType.Getter("stage")
-        public static String getStageName (StageRemovedPlayerEvent event) {
+        public static String getStageName(StageRemovedPlayerEvent event) {
             return event.stage;
         }
     }
@@ -64,7 +64,7 @@ public class ExpandStageEvent {
         @Nonnull
         @ZenCodeType.Method
         @ZenCodeType.Getter("stage")
-        public static List<String> getStageName (AllStageRemovedPlayerEvent event) {
+        public static List<String> getStageName(AllStageRemovedPlayerEvent event) {
             return event.stages;
         }
     }
