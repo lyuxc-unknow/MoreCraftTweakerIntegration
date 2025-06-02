@@ -24,6 +24,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
+import org.openzen.zencode.java.ZenCodeGlobals;
 import org.openzen.zencode.java.ZenCodeType;
 
 @ZenRegister
@@ -31,10 +32,8 @@ import org.openzen.zencode.java.ZenCodeType;
 public class AStageCraftTweakerPlugin {
     public ARestriction<?,?,?> restrictions;
 
-    @ZenCodeType.Method
-    public static AStageCraftTweakerPlugin create() {
-        return new AStageCraftTweakerPlugin();
-    }
+    @ZenCodeGlobals.Global("AStage")
+    public static AStageCraftTweakerPlugin INSTANCE = new AStageCraftTweakerPlugin();
 
     @ZenCodeType.Method
     public AStageCraftTweakerPlugin addItemRestriction(final String id, final String stage, final IIngredient... ingredients) {

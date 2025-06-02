@@ -13,7 +13,7 @@ public class MoreCrafttweakerIntegration {
     }
 
     private void onReload(final CommandEvent event) {
-        if (event.getParseResults().getReader().getString().equals("reload") && event.getParseResults().getContext().getSource().hasPermission(2)) {
+        if ("reload".equals(event.getParseResults().getReader().getString()) && event.getParseResults().getContext().getSource().hasPermission(2)) {
             AStageManager.reloadBeforeScripts();
             ARestrictionManager.reloadBeforeScripts();
         }
