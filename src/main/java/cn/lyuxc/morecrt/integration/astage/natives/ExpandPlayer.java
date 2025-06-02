@@ -1,4 +1,4 @@
-package cn.lyuxc.morecrt.integration.astage;
+package cn.lyuxc.morecrt.integration.astage.natives;
 
 import com.alessandro.astages.capability.AProvider;
 import com.alessandro.astages.capability.PlayerStage;
@@ -50,7 +50,7 @@ public class ExpandPlayer {
     }
 
     @ZenCodeType.Method
-    public static boolean playerHasStage(Player player, String stage) {
+    public static boolean hasStage(Player player, String stage) {
         if (player instanceof ServerPlayer serverPlayer) {
             return AStagesUtil.hasStage(serverPlayer, stage);
         }
@@ -58,10 +58,10 @@ public class ExpandPlayer {
     }
 
     @ZenCodeType.Method
-    public static boolean playerHasAtLeastOneStage(Player player, List<String> stages) {
+    public static boolean hasAtLeastOneStage(Player player, List<String> stages) {
         if (player instanceof ServerPlayer serverPlayer) {
             for (var stage : stages) {
-                if (playerHasStage(serverPlayer, stage)) {
+                if (hasStage(serverPlayer, stage)) {
                     return true;
                 }
             }
@@ -71,10 +71,10 @@ public class ExpandPlayer {
     }
 
     @ZenCodeType.Method
-    public static boolean playerHasAllStages(Player player, List<String> stages) {
+    public static boolean hasAllStages(Player player, List<String> stages) {
         if (player instanceof ServerPlayer serverPlayer) {
             for (var stage : stages) {
-                if (!playerHasStage(serverPlayer, stage)) {
+                if (!hasStage(serverPlayer, stage)) {
                     return false;
                 }
             }

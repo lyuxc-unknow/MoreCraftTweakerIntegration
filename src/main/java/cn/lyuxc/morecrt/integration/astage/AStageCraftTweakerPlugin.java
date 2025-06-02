@@ -8,6 +8,8 @@ import com.alessandro.astages.core.restriction.item.AItemRestriction;
 import com.alessandro.astages.core.restriction.item.AItemTagRestriction;
 import com.alessandro.astages.core.restriction.recipe.ARecipeModRestriction;
 import com.alessandro.astages.core.restriction.recipe.ARecipeRestriction;
+import com.alessandro.astages.core.stage.AStage;
+import com.alessandro.astages.core.stage.AStageManager;
 import com.alessandro.astages.store.ARestriction;
 import com.alessandro.astages.util.ACompareCondition;
 import com.alessandro.astages.util.develop.UnderDevelopment;
@@ -31,9 +33,20 @@ import org.openzen.zencode.java.ZenCodeType;
 @ZenCodeType.Name("mods.astage.AStage")
 public class AStageCraftTweakerPlugin {
     public ARestriction<?,?,?> restrictions;
+    public AStage stage;
 
     @ZenCodeGlobals.Global("AStage")
     public static AStageCraftTweakerPlugin INSTANCE = new AStageCraftTweakerPlugin();
+
+    @ZenCodeType.Method
+    public AStageCraftTweakerPlugin customizeStage(String s) {
+        var stage = new AStage(s);
+
+        AStageManager.STAGES.add(stage);
+        this.stage = stage;
+
+        return this;
+    }
 
     @ZenCodeType.Method
     public AStageCraftTweakerPlugin addItemRestriction(final String id, final String stage, final IIngredient... ingredients) {
