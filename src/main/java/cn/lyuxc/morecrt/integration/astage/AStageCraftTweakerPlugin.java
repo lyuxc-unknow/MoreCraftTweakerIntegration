@@ -1,16 +1,16 @@
 package cn.lyuxc.morecrt.integration.astage;
 
 import cn.lyuxc.morecrt.integration.astage.action.*;
-import com.alessandro.astages.core.restriction.*;
-import com.alessandro.astages.core.restriction.item.AItemModRestriction;
-import com.alessandro.astages.core.restriction.item.AItemPredicateRestriction;
-import com.alessandro.astages.core.restriction.item.AItemRestriction;
-import com.alessandro.astages.core.restriction.item.AItemTagRestriction;
-import com.alessandro.astages.core.restriction.recipe.ARecipeModRestriction;
-import com.alessandro.astages.core.restriction.recipe.ARecipeRestriction;
+import com.alessandro.astages.core.server.restriction.*;
+import com.alessandro.astages.core.server.restriction.item.AItemModRestriction;
+import com.alessandro.astages.core.server.restriction.item.AItemPredicateRestriction;
+import com.alessandro.astages.core.server.restriction.item.AItemRestriction;
+import com.alessandro.astages.core.server.restriction.item.AItemTagRestriction;
+import com.alessandro.astages.core.server.restriction.recipe.ARecipeModRestriction;
+import com.alessandro.astages.core.server.restriction.recipe.ARecipeRestriction;
 import com.alessandro.astages.core.stage.AStage;
 import com.alessandro.astages.core.stage.AStageManager;
-import com.alessandro.astages.store.ARestriction;
+import com.alessandro.astages.store.server.ARestriction;
 import com.alessandro.astages.util.ACompareCondition;
 import com.alessandro.astages.util.develop.UnderDevelopment;
 import com.blamejared.crafttweaker.api.CraftTweakerAPI;
@@ -42,7 +42,7 @@ public class AStageCraftTweakerPlugin {
     public AStageCraftTweakerPlugin customizeStage(String s) {
         var stage = new AStage(s);
 
-        AStageManager.STAGES.add(stage);
+        AStageManager.addStage(stage);
         this.stage = stage;
 
         return this;

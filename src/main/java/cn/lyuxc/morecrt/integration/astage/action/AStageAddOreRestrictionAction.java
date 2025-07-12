@@ -1,7 +1,7 @@
 package cn.lyuxc.morecrt.integration.astage.action;
 
 import com.alessandro.astages.core.ARestrictionManager;
-import com.alessandro.astages.core.restriction.AOreRestriction;
+import com.alessandro.astages.core.server.restriction.AOreRestriction;
 import com.alessandro.astages.core.stage.AStageManager;
 import com.alessandro.astages.core.wrapper.OreWrapper;
 import com.blamejared.crafttweaker.api.action.base.IRuntimeAction;

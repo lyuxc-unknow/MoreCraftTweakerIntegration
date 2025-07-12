@@ -1,7 +1,7 @@
 package cn.lyuxc.morecrt.integration.astage.action;
 
 import com.alessandro.astages.core.ARestrictionManager;
-import com.alessandro.astages.core.restriction.item.AItemTagRestriction;
+import com.alessandro.astages.core.server.restriction.item.AItemTagRestriction;
 import com.alessandro.astages.core.stage.AStageManager;
 import com.blamejared.crafttweaker.api.action.base.IRuntimeAction;
 import net.minecraft.resources.ResourceLocation;
